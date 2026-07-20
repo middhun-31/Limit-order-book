@@ -161,6 +161,9 @@ public:
         // Note: If this cancel emptied out the Best Bid/Ask, the next incoming
         // trade will automatically "walk" the BBO pointer to the correct price.
     }
+    bool pollTrade(TradeDetails& trade) {
+        return trade_queue.pop(trade);
+    }
 };
 
 
